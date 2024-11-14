@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import "../index.css";
 import axios from "axios";
 
-export default function Login() {
+export default function Login({ toggleView }) {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
 
@@ -37,6 +37,7 @@ export default function Login() {
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </Form.Group>
+
                     {/* password */}
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
@@ -45,9 +46,15 @@ export default function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </Form.Group>
+
                     {/* submit button */}
                     <Button className="login-button" type="submit">
-                        Submit
+                        Login
+                    </Button>
+
+                    {/* signup button */}
+                    <Button className="signup-button" type="button" onClick={toggleView}>
+                        Signup
                     </Button>
                 </Form>
             </div>

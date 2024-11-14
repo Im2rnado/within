@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
-export default function Register() {
+export default function Register({ toggleView }) {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [email, setEmail] = useState(null);
@@ -27,8 +27,9 @@ export default function Register() {
 
     return (
         <>
+            <div className="title"><h2 className="login-container-h2">Register</h2></div>
+
             <div className="login-container">
-                <h2>Register</h2>
                 <Form className="login-form" onSubmit={register}>
                     {/* username */}
                     <Form.Group controlId="formBasicUsername">
@@ -39,6 +40,7 @@ export default function Register() {
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </Form.Group>
+
                     {/* email */}
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
@@ -48,6 +50,7 @@ export default function Register() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </Form.Group>
+                    
                     {/* password */}
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
@@ -57,6 +60,7 @@ export default function Register() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </Form.Group>
+
                     {/* type */}
                     <Form.Group controlId="formBasicType">
                         <Form.Label>Type</Form.Label>
@@ -68,9 +72,16 @@ export default function Register() {
                             <option value="admin">Admin</option>
                         </Form.Control>
                     </Form.Group>
+
+                    {/* signup button */}
+                    <Button className="signup-button" type="submit">
+                        Signup
+                    </Button>
+
+
                     {/* submit button */}
-                    <Button className="login-button" type="submit">
-                        Submit
+                    <Button className="login-button" type="button" onClick={toggleView}>
+                        Login
                     </Button>
                 </Form>
             </div>
