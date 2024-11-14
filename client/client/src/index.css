@@ -1,13 +1,60 @@
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login-container {
+  background-color: #333333;
+  border: #716D6F 2px;
+  padding: 16px;
+  border-radius: 40px;
+  height: 285px;
+  width: 350px;
 }
+
+.login-container h2 {
+  color: #EAD1FF; /* Light purple for text */
+  font-size: 48px;
+  margin-bottom: 14px;
+}
+
+.login-form .form-label {
+  color: #FAF4FF;
+  margin-bottom: 8px;
+}
+
+.login-form .form-control {
+  background-color: #333333;
+  border: 1px solid #AB49FF;
+  border-radius: 5px;
+  height: 56px;
+  width: 320px;
+  color: #FAF4FF;
+}
+
+.login-form .form-control:focus {
+  border-color: #8315DB;
+  box-shadow: none;
+}
+
+.login-button {
+  background: linear-gradient(to right, #9825F8, #5B148F);
+  border: none;
+  color: #FAF4FF;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.login-button:hover {
+  background: linear-gradient(to right, #6F17B2, #3F006D);
+}
+
