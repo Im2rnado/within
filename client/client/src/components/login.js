@@ -26,8 +26,8 @@ export default function Login() {
 
     return (
         <>
-            <h2>Login</h2>
-            <Form onSubmit={login}>
+            <h2 className="login-container-h2">Login</h2>
+            <Form onSubmit={login} className="login-container">
                 {/* username */}
                 <Form.Group controlId="formBasicUsername">
                     <Form.Label>Username</Form.Label>
@@ -50,6 +50,7 @@ export default function Login() {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
+
             </Form>
         </>
     )
