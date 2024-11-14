@@ -37,17 +37,18 @@ body {
 .login-form .form-label {
   color: #FAF4FF;
   margin-bottom: 8px;
-  margin-top: 24px;
+  margin-top:38px ;
   margin-left: 16px;
 }
 
 .login-form .form-control {
   background-color: #333333;
   border: 1px solid #AB49FF;
+  padding-left: 16px;
   border-radius: 16px;
-  height: 56px;
+  font-size: 16px;
+  height: 42px;
   width: 410px;
-  padding-bottom: 24px;
   color: #FAF4FF;
 }
 
