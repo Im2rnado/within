@@ -1,10 +1,11 @@
 *{
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background-color: #333333;
+  background-color: #333333 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,6 @@ body {
   border: #716D6F 2px;
   padding: 16px;
   border-radius: 40px;
-  height: 285px;
   width: 350px;
 }
 

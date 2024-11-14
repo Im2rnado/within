@@ -27,51 +27,53 @@ export default function Register() {
 
     return (
         <>
-            <h2>Register</h2>
-            <Form onSubmit={register}>
-                {/* username */}
-                <Form.Group controlId="formBasicUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter username"
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </Form.Group>
-                {/* email */}
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </Form.Group>
-                {/* password */}
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </Form.Group>
-                {/* type */}
-                <Form.Group controlId="formBasicType">
-                    <Form.Label>Type</Form.Label>
-                    <Form.Control
-                        as="select"
-                        onChange={(e) => setType(e.target.value)}
-                    >
-                        <option value="student">Student</option>
-                        <option value="admin">Admin</option>
-                    </Form.Control>
-                </Form.Group>
-                {/* submit button */}
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+            <div className="login-container">
+                <h2>Register</h2>
+                <Form className="login-form" onSubmit={register}>
+                    {/* username */}
+                    <Form.Group controlId="formBasicUsername">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter username"
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </Form.Group>
+                    {/* email */}
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            type="email"
+                            placeholder="Enter email"
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </Form.Group>
+                    {/* password */}
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </Form.Group>
+                    {/* type */}
+                    <Form.Group controlId="formBasicType">
+                        <Form.Label>Type</Form.Label>
+                        <Form.Control
+                            as="select"
+                            onChange={(e) => setType(e.target.value)}
+                        >
+                            <option value="student">Student</option>
+                            <option value="admin">Admin</option>
+                        </Form.Control>
+                    </Form.Group>
+                    {/* submit button */}
+                    <Button className="login-button" type="submit">
+                        Submit
+                    </Button>
+                </Form>
+            </div>
         </>
     )
 }
