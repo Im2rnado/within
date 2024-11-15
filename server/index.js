@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-    console.log("[POST] /login request received");
+    console.log("[POST] /login");
 
     let username = req.body.username;
     const password = req.body.password;
@@ -55,7 +55,7 @@ router.post("/login", async (req, res) => {
 })
 
 router.post("/register", async (req, res) => {
-    console.log("[POST] /register request received");
+    console.log("[POST] /register");
 
     let { username, email, password, type } = req.body;
 

@@ -6,19 +6,19 @@ import "../index.css";
 export default function Login({ toggleView }) {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(""); 
+    const [errorMessage, setErrorMessage] = useState("");
 
     const login = async (event) => {
         event.preventDefault();
-        setErrorMessage(""); 
+        setErrorMessage("");
 
         try {
             const res = await axios.post("http://localhost:4000/login", { username, password });
 
             if (res.data.success) {
-                console.log(res.data.message); 
+                console.log(res.data.message);
             } else {
-                setErrorMessage("Wrong password or username."); 
+                setErrorMessage(res.data.message);
             }
         } catch (error) {
             // Display fallback error message
@@ -33,7 +33,7 @@ export default function Login({ toggleView }) {
             </div>
             <div className="login-container">
                 <Form className="login-form" onSubmit={login}>
-                    
+
                     {/* Username Field */}
                     <Form.Group controlId="formBasicUsername">
                         <Form.Label>Username</Form.Label>
@@ -76,6 +76,13 @@ export default function Login({ toggleView }) {
                     >
                         Signup
                     </Button>
+
+                    {/* Forgot password */}
+                    {
+                        <div className="forgot-pass">
+                            <p>Forgot your password? <a className="reset-click" href="/reset">Reset password</a></p>
+                        </div>
+                    }
                 </Form>
             </div>
         </>

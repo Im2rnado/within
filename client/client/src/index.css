@@ -14,7 +14,7 @@ body {
 
 .login-container {
   background-color: #333333;
-  border: 2px #716D6F solid;
+  border: 2px #444444 solid;
   padding-right: 16px;
   padding-left: 16px;
   border-radius: 40px;
@@ -31,14 +31,15 @@ body {
 .login-container-h2 {
   color: #EAD1FF;
   /* Light purple for text */
-  font-size: 48px;
+  font-size: xxx-large;
+  font-weight: bolder;
   margin-bottom: 14px;
 }
 
 .login-form .form-label {
   color: #FAF4FF;
   margin-bottom: 8px;
-  margin-top:38px ;
+  margin-top: 38px;
   margin-left: 16px;
 }
 
@@ -49,17 +50,17 @@ body {
   border-radius: 16px;
   font-size: 16px;
   height: 42px;
-  width: 410px;
-  color: #FAF4FF, !important;
+  color: #FAF4FF !important;
 }
 
 .login-form .form-control:focus {
   border-color: #8315DB;
   box-shadow: none;
+  color: #AB49FF !important;
 }
 
 .login-button {
-  background: linear-gradient(to right, #9825F8, #9825F8);
+  background: linear-gradient(to right, #8315DB, #9825F8);
   border: 2px solid #9825F8 !important;
   color: #FAF4FF;
   margin-top: 24px;
@@ -76,8 +77,8 @@ body {
 }
 
 .signup-button {
-  background: linear-gradient(to right, #3F006D, #3F006D);
-  border: 2px solid #3F006D !important;
+  background: linear-gradient(to right, #8315DB, #3F006D);
+  border: 2px solid #8315DB !important;
   color: #9825F8, !important;
   margin-top: 24px;
   margin-left: 20px;
@@ -97,8 +98,24 @@ body {
   color: red;
   max-width: 410px;
   height: 16px;
-  font-size: 12px; 
+  font-size: 12px;
   margin-top: 8px;
   margin-right: 16px;
   padding-left: 16px;
+}
+
+.forgot-pass {
+  color: #FAF4FF;
+  font-size: small;
+  margin-top: 4%;
+  text-align: center;
+}
+
+.reset-click {
+  color: #9825F8;
+  text-decoration: none;
+}
+
+.reset-click:hover {
+  color: #8315DB;
 }
