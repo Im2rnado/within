@@ -91,3 +91,9 @@ body {
 .signup-button:hover {
   background: linear-gradient(to right, #333333, #333333);
 }
+
+.error-message {
+  color: red;
+  font-size: 0.875rem; /* Slightly smaller than normal text */
+  margin-top: 5px;
+}
