@@ -4,22 +4,21 @@ import axios from "axios";
 import "../index.css";
 
 export default function Login({ toggleView }) {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState(""); // State for error message
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(""); 
 
-    // Function to handle login
     const login = async (event) => {
         event.preventDefault();
-        setErrorMessage(""); // Reset error message on each login attempt
+        setErrorMessage(""); 
 
         try {
             const res = await axios.post("http://localhost:4000/login", { username, password });
 
             if (res.data.success) {
-                alert(res.data.message); // Success message (optional)
+                console.log(res.data.message); 
             } else {
-                setErrorMessage("Wrong password or username."); // Set error message if login fails
+                setErrorMessage("Wrong password or username."); 
             }
         } catch (error) {
             // Display fallback error message
@@ -60,7 +59,7 @@ export default function Login({ toggleView }) {
                     {/* Error Message */}
                     {errorMessage && (
                         <div className="error-message">
-                            {errorMessage}
+                            <p>{errorMessage}</p>
                         </div>
                     )}
 

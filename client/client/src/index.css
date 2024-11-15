@@ -19,7 +19,7 @@ body {
   padding-left: 16px;
   border-radius: 40px;
   justify-content: center;
-  width: 441px;
+  width: 440px;
   height: 380px;
 }
 
@@ -50,7 +50,7 @@ body {
   font-size: 16px;
   height: 42px;
   width: 410px;
-  color: #FAF4FF;
+  color: #FAF4FF, !important;
 }
 
 .login-form .form-control:focus {
@@ -62,7 +62,7 @@ body {
   background: linear-gradient(to right, #9825F8, #9825F8);
   border: 2px solid #9825F8 !important;
   color: #FAF4FF;
-  margin-top: 44px;
+  margin-top: 24px;
   margin-left: 80px;
   padding-right: 32px;
   padding-left: 32px;
@@ -78,8 +78,8 @@ body {
 .signup-button {
   background: linear-gradient(to right, #3F006D, #3F006D);
   border: 2px solid #3F006D !important;
-  color: #FAF4FF;
-  margin-top: 44px;
+  color: #9825F8, !important;
+  margin-top: 24px;
   margin-left: 20px;
   padding-right: 32px;
   padding-left: 32px;
@@ -90,10 +90,15 @@ body {
 
 .signup-button:hover {
   background: linear-gradient(to right, #333333, #333333);
+  color: #9825F8, !important;
 }
 
 .error-message {
   color: red;
-  font-size: 0.875rem; /* Slightly smaller than normal text */
-  margin-top: 5px;
+  max-width: 410px;
+  height: 16px;
+  font-size: 12px; 
+  margin-top: 8px;
+  margin-right: 16px;
+  padding-left: 16px;
 }
