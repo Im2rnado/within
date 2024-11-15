@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c27bff; /* Your header background */
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: white;
+  height: 60px;
+  width: 60rem;
+  margin-top: -5rem;
+  margin-left: 15rem;
+}
+
+.header__logo img {
+  height: 40px;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.header__search-input {
+  padding: 8px;
+  border: 1px solid #daaeff;
+  border-radius: 25px;
+  flex-grow: 1; /* Allow the input to take up remaining space */
+  background-color: #daaeff;
+  color: white; /* White text for readability */
+}
+
+.header__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Lighter placeholder text */
+}
+
+.header__search-input:focus {
+  border-color: #ffcc00; /* Focused border color */
+}
+
+.header__search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 5px;
+}
+
+.header__search-button i {
+  font-size: 16px;
+  color: white; /* White icon color */
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__search-button:hover {
+  background-color: #daaeff;
+  border-radius: 50%; /* Creates the circular shape */
+  height: 40px;
+  width: 40px;
+}
+
+/* Add Flexbox to align icons in a row */
+.header__nav {
+  display: flex; /* Ensures icons are in a row */
+  align-items: center;
+}
+
+.header__nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Width and height for the circular background */
+  height: 40px;
+  border-radius: 50%; /* Creates the circular shape */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark circle background */
+}
+
+.header__nav a:hover {
+  background-color: rgba(255, 204, 0, 0.3); /* Light hover effect */
+}
+
+.header__nav a i {
+  font-size: 18px; /* Adjust icon size */
+  color: white; /* Icon color */
+}
+
+/* Notification bell specific styles */
+.notification-icon {
+  position: relative;
+}
+
+/* Red circle at the bottom right of the bell icon */
+.notification-badge {
+  position: absolute;
+  top: -5px; /* Adjust position */
+  right: -5px;
+  background-color: red;
+  color: white;
+  width: 20px; /* Red circle size */
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
