@@ -60,7 +60,7 @@ body {
 
 .login-button {
   background: linear-gradient(to right, #9825F8, #9825F8);
-  border: 2px solid #AB49FF !important;
+  border: 2px solid #9825F8 !important;
   color: #FAF4FF;
   margin-top: 44px;
   margin-left: 80px;
@@ -76,8 +76,8 @@ body {
 }
 
 .signup-button {
-  background: linear-gradient(to right, #9825F8, #9825F8);
-  border: 2px solid #AB49FF !important;
+  background: linear-gradient(to right, #3F006D, #3F006D);
+  border: 2px solid #3F006D !important;
   color: #FAF4FF;
   margin-top: 44px;
   margin-left: 20px;
