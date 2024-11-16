@@ -8,29 +8,54 @@ export default function Register({ toggleView }) {
     const [password, setPassword] = useState(null);
     const [email, setEmail] = useState(null);
     const [type, setType] = useState("student");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const register = async (event) => {
         event.preventDefault();
-
+        setErrorMessage(""); // Reset error message
+    
+        // Field validation
+        if (!username || !email || !password) {
+            setErrorMessage("All fields are required.");
+            return;
+        }
+    
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setErrorMessage("Please enter a valid email address.");
+            return;
+        }
+    
         try {
-            const res = await axios.post("http://localhost:4000/register", { username, password, email, type });
-
-            if (res.data.success === true) {
-                alert(res.data.message);
+            const res = await axios.post("http://localhost:4000/register", {
+                username,
+                password,
+                email,
+                type,
+            });
+    
+            if (res.data.success) {
+                alert("Registration successful!"); // Feedback to the user
+                setUsername("");
+                setPassword("");
+                setEmail("");
+                setType("student");
             } else {
-                alert(res.data.message);
+                setErrorMessage(res.data.message);
             }
         } catch (error) {
-            alert(error.response?.data?.message);
+            setErrorMessage(
+                error.response?.data?.message || "Something went wrong. Please try again later."
+            );
         }
-    }
+    };
 
     return (
         <>
             <div className="title"><h2 className="login-container-h2">Register</h2></div>
 
-            <div className="login-container">
-                <Form className="login-form" onSubmit={register}>
+            <div className="signup-container ">
+                <Form className="signup-form" onSubmit={register}>
                     {/* username */}
                     <Form.Group controlId="formBasicUsername">
                         <Form.Label>Username</Form.Label>
@@ -72,17 +97,26 @@ export default function Register({ toggleView }) {
                             <option value="admin">Admin</option>
                         </Form.Control>
                     </Form.Group>
+                    {/* Error Message */}
+                    {errorMessage && (
+                        <div className="error-message">
+                            <p>{errorMessage}</p>
+                        </div>
+                    )}
 
                     {/* signup button */}
-                    <Button className="signup-button" type="submit">
+                    <Button className="signup-button-signup" type="submit">
                         Signup
                     </Button>
 
+                    <div className="old-user">
+                        <p>Already have <br></br>an account?</p>
+                        {/* submit button */}
+                        <Button className="login-button-signup" type="button" onClick={toggleView}>
+                            Login
+                        </Button>
 
-                    {/* submit button */}
-                    <Button className="login-button" type="button" onClick={toggleView}>
-                        Login
-                    </Button>
+                    </div>
                 </Form>
             </div>
         </>
