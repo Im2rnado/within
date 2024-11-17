@@ -1,0 +1,92 @@
+/* Common styling for all boxes */
+.box {
+    background-color: #2e2e2e;
+    border: 2px solid #a34fe4;
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* Container styling */
+.boxes-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 79vw;
+}
+
+.grid-container {
+    display: grid;
+    position: initial;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Specific box styles */
+.box1,
+.box2 {
+    grid-column: span 2;
+    height: 30vh;
+}
+
+.box3,
+.box4,
+.box5 {
+    height: 30vh;
+}
+
+.box5 {
+    align-items: start;
+    background-color: #9DFF4A;
+}
+
+.box6 {
+    grid-row: span 2;
+}
+
+.box7 {
+    grid-column: span 3;
+    height: 30vh;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .box1,
+    .box2,
+    .box7 {
+        grid-column: span 2;
+    }
+
+    .box6 {
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7 {
+        grid-column: span 1;
+        height: auto;
+    }
+}

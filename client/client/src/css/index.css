@@ -234,12 +234,12 @@ body {
 
 /*Sidebar*/
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 2vh;
   left: 2vh;
   width: 240px;
   background: #a34fe4;
-  height: 113vh;
+  height: 95vh;
   margin-right: 24px;
   padding: 24px;
   display: flex;
@@ -288,7 +288,7 @@ body {
   background: linear-gradient(to right, #8315DB, #8315DB);
   padding: 15px;
   border-radius: 24px;
-  margin-top: 164px;
+  margin-top: 10vh;
   text-align: center;
   color: #e1d6f9;
 }

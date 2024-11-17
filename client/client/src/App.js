@@ -1,6 +1,4 @@
-import { Container } from "react-bootstrap";
-import { useState } from 'react';
-import Header from "./components/Header";
+import Header from "./components/header";
 import Sidebar from "./components/sidebar";
 import Boxes from "./components/boxes";
 import "./css/App.css"
@@ -8,16 +6,14 @@ import "./css/App.css"
 function App() {
   return (
     <div className="main-container">
-      <div className="side-bar-container"><Sidebar /></div>
+      <Sidebar />
       <div className="middle-container">
         <div><Header /></div>
-        <div>
-          <Container style={{ marginTop: '20vh', marginLeft: '32vh' }}>
-              {
-                // Add your components here
-                <Boxes />
-              }
-            </Container>
+        <div style={{ marginTop: '20vh', marginLeft: '35vh' }}>
+          {
+            // Add your components here
+            <Boxes />
+          }
         </div>
       </div>
     </div>
