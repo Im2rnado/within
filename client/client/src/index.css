@@ -78,7 +78,7 @@ body {
 }
 
 .login-button:hover {
-  background: linear-gradient(to right, #333333, #333333);
+  background: linear-gradient(to right, #8315DB, #6F17B2);
 }
 
 .signup-button {
@@ -95,7 +95,7 @@ body {
 }
 
 .signup-button:hover {
-  background: linear-gradient(to right, #333333, #333333);
+  background: linear-gradient(to right, #5B148F, #3F006D);
   color: #9825F8, !important;
 }
 
@@ -178,7 +178,6 @@ body {
 .signup-button-signup {
   background: linear-gradient(to right, #8315DB, #8315DB);
   border: 2px solid #8315DB !important;
-  color: #9825F8, !important;
   margin-top: 24px;
   margin-left: 0px;
   padding-right: 32px;
@@ -189,8 +188,7 @@ body {
 }
 
 .signup-button-signup:hover {
-  background: linear-gradient(to right, #333333, #333333);
-  color: #9825F8, !important;
+  background: linear-gradient(to right, #8315DB, #5B148F);
 }
 
 .old-user{
@@ -221,7 +219,7 @@ body {
 }
 
 .login-button-signup:hover {
-  background: linear-gradient(to right, #333333, #333333);
+  background: linear-gradient(to right, #5B148F, #3F006D);
   color: #9825F8, !important;
 }
 /*Sdiebar*/
