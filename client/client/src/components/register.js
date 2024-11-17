@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
 
@@ -9,12 +9,12 @@ export default function Register() {
     const [email, setEmail] = useState(null);
     const [type, setType] = useState("student");
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     const register = async (event) => {
         event.preventDefault();
-        setErrorMessage(""); // Reset error message
+        setErrorMessage("");
 
-        // Field validation
         if (!username || !email || !password) {
             setErrorMessage("All fields are required.");
             return;
@@ -35,7 +35,8 @@ export default function Register() {
             });
 
             if (res.data.success) {
-                alert(res.data.message); // Feedback to the user
+                alert(res.data.message);
+                navigate("/home");
             } else {
                 setErrorMessage(res.data.message);
             }
@@ -115,7 +116,7 @@ export default function Register() {
                         {/* Login */}
                         {
                             <div className="forgot-pass">
-                                <p>Already have an account? <a className="reset-click" href="/login">Login</a></p>
+                                <p>Already have an account? <NavLink to="/login" className={"reset-click"}>Login</NavLink></p>
                             </div>
                         }
 

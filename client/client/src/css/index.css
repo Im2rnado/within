@@ -238,7 +238,7 @@ body {
   top: 2vh;
   left: 2vh;
   width: 240px;
-  background: linear-gradient(to right,#a34fe4, #a765e0);
+  background: #a34fe4;
   height: calc(100vh - 60px);
   padding: 24px;
   display: flex;
@@ -249,9 +249,9 @@ body {
   border-radius: 40px;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.sidebar h2 {
+  font-weight: bold;
+  margin-bottom: -10px;
 }
 
 .menu {
@@ -263,7 +263,7 @@ h2 {
 
 .menu-item {
   background-color: #d3aef5;
-  color: #3F006D;
+  color: #FAF4FF;
   border: none;
   border-radius: 64px;
   padding: 10px;
@@ -304,8 +304,8 @@ h2 {
 }
 
 .logout-button {
-  background: linear-gradient(to right, #8315DB, #6F17B2);
-  border: none;
+  background: linear-gradient(to right, #8315DB, #8315DB);
+  border: 1px solid #3F006D !important;
   color: #FAF4FF;
   padding: 10px 20px;
   border-radius: 64px;
@@ -315,5 +315,5 @@ h2 {
 }
 
 .logout-button:hover {
-  background-color: #5e0399;
+  background: linear-gradient(to right, #8315DB, #6F17B2);
 }

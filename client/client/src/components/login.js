@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
 
@@ -6,6 +7,7 @@ export default function Login() {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     const login = async (event) => {
         event.preventDefault();
@@ -16,6 +18,7 @@ export default function Login() {
 
             if (res.data.success) {
                 alert(res.data.message);
+                navigate("/home");
             } else {
                 setErrorMessage(res.data.message);
             }
@@ -71,19 +74,20 @@ export default function Login() {
                             </Button>
 
                             {/* Signup Button */}
-                            <Button
-                                className="signup-button"
-                                type="button"
-                                onClick={() => window.location.href = "/register"}
-                            >
-                                Signup
-                            </Button>
+                            <NavLink to="/register">
+                                <Button
+                                    className="signup-button"
+                                    type="button"
+                                >
+                                    Signup
+                                </Button>
+                            </NavLink>
                         </div>
 
                         {/* Forgot password */}
                         {
                             <div className="forgot-pass">
-                                <p>Forgot your password? <a className="reset-click" href="/reset">Reset password</a></p>
+                                <p>Forgot your password? <NavLink to="/reset" className={"reset-click"}>Reset password</NavLink></p>
                             </div>
                         }
                     </Form>
