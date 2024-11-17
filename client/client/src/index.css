@@ -60,13 +60,16 @@ body {
   box-shadow: none;
   color: #AB49FF !important;
 }
-
+.login-button-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 .login-button {
   background: linear-gradient(to right, #8315DB, #8315DB);
   border: 2px solid #8315DB !important;
   color: #FAF4FF;
   margin-top: 24px;
-  margin-left: 50px;
   padding-right: 32px;
   padding-left: 32px;
   border-radius: 16px !important;

@@ -63,20 +63,23 @@ export default function Login({ toggleView }) {
                             <p>{errorMessage}</p>
                         </div>
                     )}
+                    <div className="login-button-container">
+                            {/* Login Button */}
+                        <Button className="login-button" type="submit">
+                            Login
+                        </Button>
 
-                    {/* Login Button */}
-                    <Button className="login-button" type="submit">
-                        Login
-                    </Button>
+                        {/* Signup Button */}
+                        <Button
+                            className="signup-button"
+                            type="button"
+                            onClick={toggleView}
+                        >
+                            Signup
+                        </Button>
+                    </div>
 
-                    {/* Signup Button */}
-                    <Button
-                        className="signup-button"
-                        type="button"
-                        onClick={toggleView}
-                    >
-                        Signup
-                    </Button>
+                    
 
                     {/* Forgot password */}
                     {
