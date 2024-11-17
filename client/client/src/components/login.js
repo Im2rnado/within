@@ -44,7 +44,6 @@ export default function Login({ toggleView }) {
                             required
                         />
                     </Form.Group>
-                    
 
                     {/* Password Field */}
                     <Form.Group controlId="formBasicPassword">
@@ -78,8 +77,6 @@ export default function Login({ toggleView }) {
                             Signup
                         </Button>
                     </div>
-
-                    
 
                     {/* Forgot password */}
                     {

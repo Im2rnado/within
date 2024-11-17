@@ -1,6 +1,7 @@
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useState } from 'react';
 import Register from "./components/register";
+import ForgetPassword from "./components/forgetPassword"
 import Login from "./components/login";
 import Header from "./components/Header";
 // import Sidebar from "./components/sidebar";
@@ -21,7 +22,7 @@ function App() {
             {showLogin ? (
               <Login toggleView={toggleView} />
             ) : (
-              <Register toggleView={toggleView} />
+              <ForgetPassword toggleView={toggleView} />
             )}
       </Container>
     </div>
