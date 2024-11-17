@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 
-const Sidebar = () => {
+export default function Sidebar() {
   return (
     <div className="sidebar">
       <h2>Within</h2>
@@ -29,9 +30,7 @@ const Sidebar = () => {
         </p>
       </div>
       {/* Logout Button */}
-      <button className="logout-button">Logout</button>
+      <NavLink to="/login" className={"reset-click"}><button className="logout-button">Logout</button></NavLink>
     </div>
   );
 };
-
-export default Sidebar;

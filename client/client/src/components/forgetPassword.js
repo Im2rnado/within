@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
 
@@ -7,6 +8,7 @@ export default function ForgetPassword() {
     const [newPassword, setNewPassword] = useState(null);
     const [password, setPassword] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     const forgetPassword = async (event) => {
         event.preventDefault();
@@ -17,11 +19,11 @@ export default function ForgetPassword() {
 
             if (res.data.success) {
                 alert(res.data.message);
+                navigate("/home");
             } else {
                 setErrorMessage(res.data.message);
             }
         } catch (error) {
-            // Display fallback error message
             setErrorMessage(error.response?.data?.message || "An error occurred. Please try again.");
         }
     };
@@ -86,7 +88,7 @@ export default function ForgetPassword() {
                         {/* Login */}
                         {
                             <div className="forgot-pass">
-                                <p>Return back to <a className="reset-click" href="/">Login</a></p>
+                                <p>Return back to <NavLink to="/login" className={"reset-click"}>Login</NavLink></p>
                             </div>
                         }
                     </Form>
