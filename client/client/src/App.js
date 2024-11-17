@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Register from "./components/register";
 import Login from "./components/login";
 import Header from "./components/Header";
+// import Sidebar from "./components/sidebar";
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div>
+      {/* <Sidebar /> */}
       <Header />
 
       <Container>
