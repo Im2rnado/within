@@ -21,13 +21,11 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: 380px;
-}
-#forgot-password{
   width: 100%;
-  height: 490px;
-} 
+  min-width: 70vh;
+  height: auto;
+}
+
 .title {
   padding-top: 0rem;
   text-align: center;
@@ -63,11 +61,13 @@ body {
   box-shadow: none;
   color: #AB49FF !important;
 }
-.login-button-container{
+
+.login-button-container {
   display: flex;
   width: 100%;
   justify-content: center;
 }
+
 .login-button {
   background: linear-gradient(to right, #8315DB, #8315DB);
   border: 2px solid #8315DB !important;
@@ -79,7 +79,8 @@ body {
   width: 100px;
   height: 52PX;
 }
-#reset-password-button{
+
+#reset-password-button {
   height: 52px;
   width: fit-content;
 }
@@ -143,8 +144,9 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: 608px;
+  width: 100%;
+  min-width: 70vh;
+  height: auto;
 }
 
 .title {
@@ -182,6 +184,7 @@ body {
   box-shadow: none;
   color: #AB49FF !important;
 }
+
 .signup-button-signup {
   background: linear-gradient(to right, #8315DB, #8315DB);
   border: 2px solid #8315DB !important;
@@ -198,16 +201,15 @@ body {
   background: linear-gradient(to right, #8315DB, #5B148F);
 }
 
-.old-user{
+.old-user {
   display: flex;
   margin-top: 24px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-left: 16px;
 }
 
-.old-user p{
+.old-user p {
   margin-right: 96px;
   font-size: 16px;
   margin-top: 10px;
@@ -229,12 +231,16 @@ body {
   background: linear-gradient(to right, #5B148F, #3F006D);
   color: #9825F8, !important;
 }
-/*Sdiebar*/
+
+/*Sidebar*/
 .sidebar {
+  position: fixed;
+  top: 2vh;
+  left: 2vh;
   width: 240px;
-  background-color: #a34fe4;
-  height: 100vh;
-  padding: 24px 24px 24px 24px;
+  background: linear-gradient(to right,#a34fe4, #a765e0);
+  height: calc(100vh - 60px);
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,7 +263,7 @@ h2 {
 
 .menu-item {
   background-color: #d3aef5;
-  color: #FAF4FF;
+  color: #3F006D;
   border: none;
   border-radius: 64px;
   padding: 10px;
@@ -278,9 +284,10 @@ h2 {
 }
 
 .welcome-box {
-  background-color: #843bdb;
+  background: linear-gradient(to right, #8315DB, #6F17B2);
   padding: 15px;
   border-radius: 24px;
+  border: 1px solid #3F006D !important;
   margin: 36px 0;
   text-align: center;
   color: #e1d6f9;
@@ -297,9 +304,9 @@ h2 {
 }
 
 .logout-button {
-  background-color: #7904cc;
+  background: linear-gradient(to right, #8315DB, #6F17B2);
   border: none;
-  color:  #FAF4FF;
+  color: #FAF4FF;
   padding: 10px 20px;
   border-radius: 64px;
   cursor: pointer;

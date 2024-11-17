@@ -33,6 +33,7 @@ router.post("/login", async (req, res) => {
 
     try {
         const user = await Users.findOne({ $or: [{ email: username }, { username }] });
+
         if (!user) {
             console.log("[400] User not found");
             return res.status(400).json({ success: false, message: "Incorrect username" });
@@ -52,7 +53,7 @@ router.post("/login", async (req, res) => {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });
     }
-})
+});
 
 router.post("/register", async (req, res) => {
     console.log("[POST] /register");
@@ -79,64 +80,23 @@ router.post("/register", async (req, res) => {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });
     }
-})
+});
 
-router.post("/forgetPassword", async(req, res)=>{
+router.post("/forgetPassword", async (req, res) => {
     console.log("[POST] /forgetPassword");
-    
+
     let username = req.body.username;
     const currentPassword = req.body.password;
     const newPassword = req.body.newPassword;
 
     username = username.toLowerCase();
 
-    try{
-        const user = await Users.findOne({ $or: [{email} , {username}] });
-        
-        if (!user){
-            console.log("[400] User not found");
-            res.status(400).json({succes: false, message:"Incorrect Username"});
-        }
-        const checkPassword = await bcrypt.compare(currentPassword, user.password);
-        
-        if (!checkPassword){
-            console.log("[400] Incorrect Password");
-            return res.status(400).json({ success: false, message: "Incorrect password" });
-        }
-
-        const currentPassword = newPassword;
-        const hashedPassword = await bcrypt.hash(currentPassword, 10)
-        //ertegal men hena moot
-        const updateUser = await Users.updateOne({password: hashedPassword});
-        await updateUser.save();
-
-        console.log("[200] User created successfully");
-        return res.status(200).json({ success: true, message: "User created successfully" });
-    } catch (error) {
-        console.log("[500] Internal server error");
-        res.status(500).json({ success: false, message: error.message });
-    }    
-})
-
-//answer given
-/*router.post("/forgetPassword", async (req, res) => {
-    console.log("[POST] /forgetPassword");
-
-    let { username, password: currentPassword, newPassword, email } = req.body;
-
-    if (!username || !currentPassword || !newPassword) {
-        console.log("[400] Missing fields");
-        return res.status(400).json({ success: false, message: "Missing required fields" });
-    }
-
-    username = username.toLowerCase();
-
     try {
-        const user = await Users.findOne({ $or: [{ email }, { username }] });
+        const user = await Users.findOne({ $or: [{ email: username }, { username }] });
 
         if (!user) {
             console.log("[400] User not found");
-            return res.status(400).json({ success: false, message: "Incorrect username or email" });
+            res.status(400).json({ success: false, message: "Incorrect username" });
         }
 
         const checkPassword = await bcrypt.compare(currentPassword, user.password);
@@ -148,24 +108,17 @@ router.post("/forgetPassword", async(req, res)=>{
 
         const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-        const updateUser = await Users.updateOne(
-            { username }, 
-            { $set: { password: hashedPassword } }
-        );
-
-        if (updateUser.modifiedCount === 0) {
-            console.log("[400] Password update failed");
-            return res.status(400).json({ success: false, message: "Failed to update password" });
-        }
+        // Update password
+        user.password = hashedPassword;
+        await user.save();
 
         console.log("[200] Password updated successfully");
         return res.status(200).json({ success: true, message: "Password updated successfully" });
     } catch (error) {
-        console.log("[500] Internal server error:", error.message);
-        return res.status(500).json({ success: false, message: "Internal server error" });
+        console.log("[500] Internal server error");
+        res.status(500).json({ success: false, message: error.message });
     }
-});*/
-
+});
 
 app.listen(port, () => {
     console.log("[SERVER] Running on http://localhost:" + port);

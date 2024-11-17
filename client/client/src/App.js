@@ -1,29 +1,15 @@
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useState } from 'react';
-import Register from "./components/register";
-import ForgetPassword from "./components/forgetPassword"
-import Login from "./components/login";
-import Header from "./components/Header";
-// import Sidebar from "./components/sidebar";
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
 
 function App() {
-  const [showLogin, setShowLogin] = useState(true);
-
-  const toggleView = () => {
-    setShowLogin(!showLogin);
-  };
-
   return (
     <div>
-      {/* <Sidebar /> */}
       <Header />
-
-      <Container>
-            {showLogin ? (
-              <Login toggleView={toggleView} />
-            ) : (
-              <ForgetPassword toggleView={toggleView} />
-            )}
+      <Sidebar />
+      <Container style={{ marginTop: '60px', marginLeft: '240px' }}>
+        {/* Your main content goes here */}
       </Container>
     </div>
   );
