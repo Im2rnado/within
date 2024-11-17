@@ -24,7 +24,10 @@ body {
   width: 50%;
   height: 380px;
 }
-
+#forgot-password{
+  width: 100%;
+  height: 490px;
+} 
 .title {
   padding-top: 0rem;
   text-align: center;
@@ -75,6 +78,10 @@ body {
   border-radius: 16px !important;
   width: 100px;
   height: 52PX;
+}
+#reset-password-button{
+  height: 52px;
+  width: fit-content;
 }
 
 .login-button:hover {
@@ -303,5 +310,3 @@ h2 {
 .logout-button:hover {
   background-color: #5e0399;
 }
-
-

@@ -35,7 +35,7 @@ export default function ForgetPassword({ toggleView }) {
                     <div className="title">
                         <h2 className="login-container-h2">Forget Password</h2>
                     </div>
-                    <div className="login-container">
+                    <div className="login-container" id="forgot-password" >
                         <Form className="login-form" onSubmit={forgetPassword}>
 
                             {/* Username Field */}
@@ -80,7 +80,7 @@ export default function ForgetPassword({ toggleView }) {
 
                             <div className="login-button-container">
                                 {/* ForgetPassword Button */}
-                                <Button className="login-button" type="submit">
+                                <Button className="login-button" id="reset-password-button" type="submit">
                                     Reset Password
                                 </Button>
                             </div>
