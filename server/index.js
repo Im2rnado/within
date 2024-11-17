@@ -118,6 +118,55 @@ router.post("/forgetPassword", async(req, res)=>{
     }    
 })
 
+//answer given
+/*router.post("/forgetPassword", async (req, res) => {
+    console.log("[POST] /forgetPassword");
+
+    let { username, password: currentPassword, newPassword, email } = req.body;
+
+    if (!username || !currentPassword || !newPassword) {
+        console.log("[400] Missing fields");
+        return res.status(400).json({ success: false, message: "Missing required fields" });
+    }
+
+    username = username.toLowerCase();
+
+    try {
+        const user = await Users.findOne({ $or: [{ email }, { username }] });
+
+        if (!user) {
+            console.log("[400] User not found");
+            return res.status(400).json({ success: false, message: "Incorrect username or email" });
+        }
+
+        const checkPassword = await bcrypt.compare(currentPassword, user.password);
+
+        if (!checkPassword) {
+            console.log("[400] Incorrect Password");
+            return res.status(400).json({ success: false, message: "Incorrect password" });
+        }
+
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        const updateUser = await Users.updateOne(
+            { username }, 
+            { $set: { password: hashedPassword } }
+        );
+
+        if (updateUser.modifiedCount === 0) {
+            console.log("[400] Password update failed");
+            return res.status(400).json({ success: false, message: "Failed to update password" });
+        }
+
+        console.log("[200] Password updated successfully");
+        return res.status(200).json({ success: true, message: "Password updated successfully" });
+    } catch (error) {
+        console.log("[500] Internal server error:", error.message);
+        return res.status(500).json({ success: false, message: "Internal server error" });
+    }
+});*/
+
+
 app.listen(port, () => {
     console.log("[SERVER] Running on http://localhost:" + port);
 });
