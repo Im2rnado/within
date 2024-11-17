@@ -5,7 +5,9 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <h2>Internal Portal</h2>
+      {/* Pages' Buttons */}
       <div className="menu">
+        {/* change the icons to something else */}
         <button className="menu-item">
           <span className="icon">🏠</span> Home
         </button>
@@ -27,6 +29,7 @@ const Sidebar = () => {
           make the most of it!
         </p>
       </div>
+      {/* Logout Button */}
       <button className="logout-button">Logout</button>
     </div>
   );
