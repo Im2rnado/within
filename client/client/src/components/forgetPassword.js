@@ -32,7 +32,7 @@ export default function ForgetPassword() {
         <div>
             <Container>
                 <div className="title">
-                    <h2 className="login-container-h2">Forget Password</h2>
+                    <h2 className="login-container-h2">Reset Password</h2>
                 </div>
                 
                 <div className="login-container" >
