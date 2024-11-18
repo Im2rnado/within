@@ -5,9 +5,18 @@
     border-radius: 30px;
     color: #fff;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
     font-size: 18px;
+    flex-direction: column;
+}
+
+.box h4 {
+    color: #eab2ff;
+    font-weight: bolder;
+}
+
+.box p {
+    font-weight: 100;
 }
 
 /* Container styling */
@@ -42,7 +51,9 @@
 }
 
 .box5 {
+    padding: 0;
     align-items: start;
+    border: none;
     background-color: #9DFF4A;
 }
 
