@@ -4,22 +4,22 @@ import { NavLink } from 'react-router-dom'
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>Within</h2>
+      <h2>ESLSCA</h2>
       {/* Pages' Buttons */}
       <div className="menu">
         {/* change the icons to something else */}
-        <button className="menu-item">
+        <NavLink to="/home" className={"menu-item"}>
           <span className="icon">🏠</span> Home
-        </button>
-        <button className="menu-item">
+        </NavLink>
+        <NavLink to="/posts" className={"menu-item"}>
+          <span className="icon">📋</span> Posts
+        </NavLink>
+        <NavLink to="/profile" className={"menu-item"}>
           <span className="icon">👤</span> Profile
-        </button>
-        <button className="menu-item">
+        </NavLink>
+        <NavLink to="/calendar" className={"menu-item"}>
           <span className="icon">📅</span> Calendar
-        </button>
-        <button className="menu-item">
-          <span className="icon">📋</span> Forms
-        </button>
+        </NavLink>
       </div>
       <div className="welcome-box">
         <h3>Welcome to the Portal!</h3>
@@ -30,7 +30,7 @@ export default function Sidebar() {
         </p>
       </div>
       {/* Logout Button */}
-      <NavLink to="/login" className={"reset-click"}><button className="logout-button">Logout</button></NavLink>
+      <NavLink to="/login" className={"logout-button"}>Logout</NavLink>
     </div>
   );
 };

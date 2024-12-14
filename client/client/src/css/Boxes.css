@@ -1,7 +1,13 @@
 /* Common styling for all boxes */
+.announcement-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -12px;
+}
+
 .box {
     background-color: #2e2e2e;
-    border: 2px solid #a34fe4;
+    border: 2px solid #3044FB;
     border-radius: 30px;
     color: #fff;
     display: flex;
@@ -11,7 +17,7 @@
 }
 
 .box h4 {
-    color: #eab2ff;
+    color: #4F6FFF;
     font-weight: bolder;
 }
 
