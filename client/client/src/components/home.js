@@ -22,7 +22,7 @@ export default function Home() {
                 <div className="box box5">
                     <Calendar onChange={setDate} value={date} />
                 </div>
-                <div className="box box6"><img src="https://i.pinimg.com/originals/c8/0d/a2/c80da26b5730b481c8e5f0c5e8a9e69f.jpg" alt="sisi" /></div>
+                <div className="box box6"><img src="https://www.planetaformacion.com/sites/pfu.es/files/styles/img_style_11_21_480/public/images/PHOTO-2022-07-07-12-47-19%202.jpg?itok=5eMY-WRJ" alt="sisi" /></div>
 
                 {/* Third Row */}
                 <Offers />
