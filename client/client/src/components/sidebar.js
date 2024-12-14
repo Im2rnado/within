@@ -21,6 +21,11 @@ export default function Sidebar() {
           <span className="icon">📅</span> Calendar
         </NavLink>
       </div>
+
+      <NavLink to="/create-post" className={"logout-button"}>
+        <span className="icon">✙</span>Create Post
+      </NavLink>
+
       <div className="welcome-box">
         <h3>Welcome to the Portal!</h3>
         <p>

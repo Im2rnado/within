@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import Sidebar from "./components/sidebar";
-import Boxes from "./components/boxes";
 import "./css/App.css";
+import Home from "./components/home";
 
 function App() {
   return (
@@ -12,10 +12,7 @@ function App() {
           <Header />
         </div>
         <div style={{ marginTop: "20vh", marginLeft: "35vh" }}>
-          {
-            // Add your components here
-            <Boxes />
-          }
+          <Home />
         </div>
       </div>
     </div>

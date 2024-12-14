@@ -18,18 +18,18 @@ export default function HomePosts() {
         <>
             <div className="box box3">
                 <h4>Trending Post</h4>
-                <p>{trending.content}</p>
+                <p>{trending?.content?.length > 160 ? trending?.content?.substring(0, 160) + '...' : trending?.content}</p>
                 <p className="announcement-meta">
-                    Posted by <b>{trending.author}</b> on{" "}
-                    <b>{new Date(trending.date).toLocaleDateString()}</b>
+                    Posted by <b>{trending?.author}</b> on{" "}
+                    <b>{new Date(trending?.date).toLocaleDateString()}</b>
                 </p>
             </div>
             <div className="box box4">
                 <h4>Latest Post</h4>
-                <p>{latest.content}</p>
+                <p>{latest?.content?.length > 160 ? latest?.content?.substring(0, 160) + '...' : latest?.content}</p>
                 <p className="announcement-meta">
-                    Posted by <b>{latest.author}</b> on{" "}
-                    <b>{new Date(latest.date).toLocaleDateString()}</b>
+                    Posted by <b>{latest?.author}</b> on{" "}
+                    <b>{new Date(latest?.date).toLocaleDateString()}</b>
                 </p>
             </div>
         </>

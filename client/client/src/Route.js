@@ -3,6 +3,7 @@ import App from "./App.js"
 import ForgetPassword from './components/forgetPassword';
 import Login from './components/login.js';
 import Register from './components/register.js';
+import Posts from './Posts.js';
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
         <Route path="reset" element={<ForgetPassword />} />
 
         <Route path="home" element={<App />} />
+        <Route path="posts" element={<Posts />} />
       </Routes>
     </BrowserRouter>
   );

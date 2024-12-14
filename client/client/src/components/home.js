@@ -7,7 +7,7 @@ import Offers from "./offers";
 import Announcements from "./announcements";
 import HomePosts from "./homePosts";
 
-export default function Boxes() {
+export default function Home() {
     const [date, setDate] = useState(new Date());
 
     return (

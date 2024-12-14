@@ -16,11 +16,11 @@ export default function Announcements() {
         <>
             {announcements && announcements.map((announcement) => (
                 <div className="box box1">
-                    <h4>{announcement.title}</h4>
-                    <p>{announcement.content}</p>
+                    <h4>{announcement?.title}</h4>
+                    <p>{announcement?.content?.length > 330 ? announcement?.content?.substring(0, 330) + '...' : announcement?.content}</p>
                     <p className="announcement-meta">
-                        Posted by <b>{announcement.author}</b> on{" "}
-                        <b>{new Date(announcement.date).toLocaleDateString()}</b>
+                        Posted by <b>{announcement?.author}</b> on{" "}
+                        <b>{new Date(announcement?.date).toLocaleDateString()}</b>
                     </p>
                 </div>
 
