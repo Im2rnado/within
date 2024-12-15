@@ -33,6 +33,14 @@ h4 {
     width: 79vw;
 }
 
+.boxes-container h1 {
+    margin-left: 1.5vw;
+    margin-top: 2vh;
+    margin-bottom: 0vh;
+    color: #4F6FFF;
+    font-weight: bolder;
+}
+
 .grid-container {
     display: grid;
     position: initial;

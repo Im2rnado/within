@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/Boxes.css";
 
-export default function Announcements() {
+export default function HomeAnnouncements() {
     const [announcements, setAnnouncements] = useState([]);
 
     useEffect(() => {
@@ -17,11 +17,10 @@ export default function Announcements() {
             {announcements && announcements.map((announcement) => (
                 <div className="box box1">
                     <h4>{announcement?.title}</h4>
-                    <p>{announcement?.content?.length > 320 ? announcement?.content?.substring(0, 320) + '...' : announcement?.content}</p>
+                    <p>{announcement?.content?.length > 300 ? announcement?.content?.substring(0, 300) + '...' : announcement?.content}</p>
                     <p className="announcement-meta">
                         Announced by <b>{announcement?.author}</b> on{" "}
-                        <b>{new Date(announcement?.date).toLocaleDateString()}</b> at{" "}
-                        <b>{new Date(announcement?.date).toLocaleTimeString()}</b>
+                        <b>{new Date(announcement?.date).toLocaleDateString()}</b>
                     </p>
                 </div>
 

@@ -236,6 +236,7 @@ router.get("/offers", async(req, res) => {
 
     try {
         const offers = await Offers.find();
+        
         console.log("[200] Offers retrieved successfully");
         return res.status(200).json({ success: true, offers });
     } catch (error) {

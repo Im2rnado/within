@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import Sidebar from "./components/sidebar";
 import "./css/App.css";
-import Posts from "./components/posts";
+import Announcements from "./components/announcements";
 
 function App() {
     return (
@@ -12,10 +12,10 @@ function App() {
                     <Header />
                 </div>
                 <div style={{ marginTop: "20vh", marginLeft: "35vh" }}>
-                    <h1><span className="icon">📋</span>Posts</h1>
+                    <h1><span className="icon">📢</span>Announcements</h1>
                     <div className="boxes-container">
                         <div className="grid-container">
-                            <Posts />
+                            <Announcements />
                         </div>
                     </div>
                 </div>

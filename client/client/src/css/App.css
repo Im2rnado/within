@@ -18,3 +18,8 @@ h1 {
     color: #4F6FFF;
     font-weight: bolder;
 }
+
+.logo {
+    width: 90%;
+    margin-bottom: -10px;
+}

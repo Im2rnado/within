@@ -4,7 +4,7 @@ import Calendar from "react-calendar";
 import "../css/Calendar.css";
 import "../css/Boxes.css";
 import Offers from "./offers";
-import Announcements from "./announcements";
+import HomeAnnouncements from "./homeAnnouncements";
 import HomePosts from "./homePosts";
 
 export default function Home() {
@@ -12,9 +12,11 @@ export default function Home() {
 
     return (
         <div className="boxes-container">
+
+            <h1><span className="icon">🏠</span>Home</h1>
             <div className="grid-container">
                 {/* First Row */}
-                <Announcements />
+                <HomeAnnouncements />
 
                 {/* Second Row */}
                 <HomePosts />
