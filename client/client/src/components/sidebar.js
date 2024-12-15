@@ -24,8 +24,8 @@ export default function Sidebar() {
         </NavLink>
       </div>
 
-      <NavLink to="/create-post" className={"logout-button"}>
-        <span className="icon">✙</span>Create Post
+      <NavLink to="/add-post" className={"logout-button"}>
+        <span className="icon">✙</span>Add Post
       </NavLink>
 
       <div className="welcome-box">

@@ -14,9 +14,7 @@ function App() {
                 <div style={{ marginTop: "20vh", marginLeft: "35vh" }}>
                     <h1><span className="icon">📋</span>Posts</h1>
                     <div className="boxes-container">
-                        <div className="grid-container">
-                            <Posts />
-                        </div>
+                        <Posts />
                     </div>
                 </div>
             </div>

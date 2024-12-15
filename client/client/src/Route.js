@@ -5,6 +5,7 @@ import Login from './components/login.js';
 import Register from './components/register.js';
 import Posts from './Posts.js';
 import Announcements from './Announcements.js';
+import AddPost from './AddPost.js';
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
         <Route path="home" element={<App />} />
         <Route path="posts" element={<Posts />} />
         <Route path="announcements" element={<Announcements />} />
+        <Route path="add-post" element={<AddPost />} />
       </Routes>
     </BrowserRouter>
   );

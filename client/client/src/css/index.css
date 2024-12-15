@@ -48,7 +48,7 @@ body {
 
 .login-form .form-control {
   background-color: #333333;
-  border: 1px solid #3044FB;
+  border: 2px solid #3044FB;
   padding-left: 16px;
   border-radius: 16px;
   font-size: 16px;
@@ -171,7 +171,7 @@ body {
 
 .signup-form .form-control {
   background-color: #333333;
-  border: 1px solid #3044FB;
+  border: 2px solid #3044FB;
   padding-left: 16px;
   border-radius: 16px;
   font-size: 16px;
@@ -307,7 +307,7 @@ body {
 .logout-button {
   background: linear-gradient(to right, #202EB3, #202EB3);
   text-decoration: none;
-  border: 1px solid #202EB3 !important;
+  border: 2px solid #202EB3 !important;
   color: #ECF4FF;
   padding: 10px 20px;
   border-radius: 64px;
@@ -318,4 +318,64 @@ body {
 
 .logout-button:hover {
   background: linear-gradient(to right, #202EB3, #2433DE);
+}
+
+.post-container {
+  background-color: #333333;
+  border: 2px #444444 solid;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 40px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-width: 76vw;
+  min-height: 50vh;
+  height: auto;
+}
+
+.post-form .form-label {
+  color: #ECF4FF;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 16px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.post-form .form-control {
+  background-color: #333333;
+  border: 2px solid #3044FB;
+  padding-left: 16px;
+  border-radius: 16px;
+  font-size: large;
+  height: 42px;
+  color: #ECF4FF !important;
+}
+
+.post-form .form-control:focus {
+  border-color: #2433DE;
+  box-shadow: none;
+  color: #ECF4FF !important;
+  background-color: #2433DE;
+}
+
+.post-form .content-textarea {
+  min-height: 50vh;
+}
+
+.post-button {
+  background: linear-gradient(to right, #2433DE, #2433DE);
+  border: 2px solid #2433DE !important;
+  color: #ECF4FF;
+  margin-top: 24px;
+  padding-right: 32px;
+  padding-left: 32px;
+  border-radius: 16px !important;
+  width: 100%;
+  height: 52PX;
+  margin-bottom: 20px;
+  font-size: x-large !important;
+  font-weight: bolder !important;
 }

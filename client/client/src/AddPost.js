@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import Sidebar from "./components/sidebar";
 import "./css/App.css";
-import Announcements from "./components/announcements";
+import AddPost from "./components/addPost";
 
 function App() {
     return (
@@ -11,11 +11,8 @@ function App() {
                 <div>
                     <Header />
                 </div>
-                <div style={{ marginTop: "20vh", marginLeft: "35vh" }}>
-                    <h1><span className="icon">📢</span>Announcements</h1>
-                    <div className="boxes-container">
-                        <Announcements />
-                    </div>
+                <div style={{ marginTop: "10vh", marginLeft: "35vh" }}>
+                    <AddPost />
                 </div>
             </div>
         </div>

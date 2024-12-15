@@ -17,7 +17,7 @@ export default function HomeAnnouncements() {
             {announcements && announcements.map((announcement) => (
                 <div className="box box1">
                     <h4>{announcement?.title}</h4>
-                    <p>{announcement?.content?.length > 300 ? announcement?.content?.substring(0, 300) + '...' : announcement?.content}</p>
+                    <p>{announcement?.content?.length > 310 ? announcement?.content?.substring(0, 310) + '...' : announcement?.content}</p>
                     <p className="announcement-meta">
                         Announced by <b>{announcement?.author}</b> on{" "}
                         <b>{new Date(announcement?.date).toLocaleDateString()}</b>

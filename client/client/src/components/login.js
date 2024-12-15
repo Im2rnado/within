@@ -17,6 +17,9 @@ export default function Login() {
             const res = await axios.post("http://localhost:4000/login", { username, password });
 
             if (res.data.success) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('type', res.data.userType);
+
                 alert(res.data.message);
                 navigate("/home");
             } else {

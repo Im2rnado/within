@@ -55,7 +55,8 @@ h4 {
 .box1,
 .box2 {
     grid-column: span 2;
-    height: 30vh;
+    min-height: 10vh;
+    max-height: 31vh;
 }
 
 .box3,
@@ -88,6 +89,20 @@ h4 {
 .box7 {
     grid-column: span 3;
     height: 30vh;
+}
+
+.post {
+    margin: 1vw;
+    background-color: #2e2e2e;
+    border: 2px solid #3044FB;
+    border-radius: 30px;
+    color: #fff;
+    padding: 20px;
+    padding-bottom: 0%;
+    font-size: 18px;
+    height: fit-content;
+    max-height: 40vh;
+    margin-bottom: 1vh;
 }
 
 /* Responsive styles */
