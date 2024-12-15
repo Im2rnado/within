@@ -36,8 +36,8 @@ export default function Register() {
 
             if (res.data.success) {
                 localStorage.setItem('username', username);
-                localStorage.setItem('type', res.data.userType);
-                
+                localStorage.setItem('type', res.data.type);
+
                 alert(res.data.message);
                 navigate("/home");
             } else {

@@ -28,6 +28,12 @@ export default function Sidebar() {
         <span className="icon">✙</span>Add Post
       </NavLink>
 
+      { localStorage.getItem('type') === "admin" && (
+        <NavLink to="/add-announcement" className={"logout-button"}>
+          <span className="icon">✙</span>Add Announcement
+        </NavLink>
+      )}
+
       <div className="welcome-box">
         <h3>Welcome to the Portal!</h3>
         <p>

@@ -19,8 +19,8 @@ export default function ForgetPassword() {
 
             if (res.data.success) {
                 localStorage.setItem('username', username);
-                localStorage.setItem('type', res.data.userType);
-                
+                localStorage.setItem('type', res.data.type);
+
                 alert(res.data.message);
                 navigate("/home");
             } else {
@@ -37,7 +37,7 @@ export default function ForgetPassword() {
                 <div className="title">
                     <h2 className="login-container-h2">Reset Password</h2>
                 </div>
-                
+
                 <div className="login-container" >
                     <Form className="login-form" onSubmit={forgetPassword}>
 
