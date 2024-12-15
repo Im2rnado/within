@@ -8,7 +8,7 @@ export default function HomeAnnouncements() {
 
     useEffect(() => {
         axios.get("http://localhost:4000/announcements").then((response) => {
-            setAnnouncements(response.data.announcements);
+            setAnnouncements(response.data.announcements.splice(-2));
         });
     }, []);
 

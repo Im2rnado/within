@@ -166,6 +166,31 @@ router.post("/addPost", async(req, res) => {
     }
 });
 
+router.delete("/deletePost/:title", async (req, res) => {
+    const title = req.params.title;
+
+    console.log("[DELETE] /deletePost/" + title);
+
+    try {
+        const post = await Posts.findOne({
+            title
+        });
+
+        if (!post) {
+            console.log("[400] Post not found");
+            return res.status(400).json({ success: false, message: "Post not found" });
+        }
+
+        await post.deleteOne();
+
+        console.log("[200] Post deleted successfully");
+        return res.status(200).json({ success: true, message: "Post deleted successfully" });
+    } catch (error) {
+        console.log("[500] Internal server error");
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
 router.get("/announcements", async(req, res) => {
     console.log("[GET] /announcements");
 
@@ -185,7 +210,7 @@ router.post("/addAnnouncement", async(req, res) => {
     const { author, title, content } = req.body;
 
     try {
-        const user = await Users.findById(author);
+        const user = await Users.findOne({ username: author });
 
         if (user.type !== "admin") {
             console.log("[403] Forbidden");
@@ -197,6 +222,31 @@ router.post("/addAnnouncement", async(req, res) => {
 
         console.log("[200] Announcement created successfully");
         return res.status(200).json({ success: true, message: "Announcement created successfully" });
+    } catch (error) {
+        console.log("[500] Internal server error");
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+router.delete("/deleteAnnouncement/:title", async(req, res) => {
+    const title = req.params.title;
+
+    console.log("[DELETE] /deleteAnnouncement/" + title);
+
+    try {
+        const announcement = await Announcements.findOne({
+            title
+        });
+
+        if (!announcement) {
+            console.log("[400] Announcement not found");
+            return res.status(400).json({ success: false, message: "Announcement not found" });
+        }
+
+        await announcement.deleteOne();
+
+        console.log("[200] Announcement deleted successfully");
+        return res.status(200).json({ success: true, message: "Announcement deleted successfully" });
     } catch (error) {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });

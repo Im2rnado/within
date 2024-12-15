@@ -23,3 +23,17 @@ h1 {
     width: 90%;
     margin-bottom: -10px;
 }
+
+.delete {
+    position: absolute;
+    margin-top: -1vh;
+    right: 3rem;
+    color: #ef4444 !important;
+    background-color: #2e2e2e !important;
+    border: none;
+    padding: 0%;
+}
+
+.delete:hover {
+    color: #b91c1c;
+}
