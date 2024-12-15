@@ -78,7 +78,7 @@ router.post("/register", async (req, res) => {
         await newUser.save();
 
         console.log("[200] User created successfully");
-        return res.status(200).json({ success: true, message: "User created successfully" });
+        return res.status(200).json({ success: true, message: "User created successfully", type: user.type });
     } catch (error) {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });
@@ -116,7 +116,7 @@ router.post("/forgetPassword", async (req, res) => {
         await user.save();
 
         console.log("[200] Password updated successfully");
-        return res.status(200).json({ success: true, message: "Password updated successfully" });
+        return res.status(200).json({ success: true, message: "Password updated successfully", type: user.type });
     } catch (error) {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });

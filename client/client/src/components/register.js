@@ -35,6 +35,9 @@ export default function Register() {
             });
 
             if (res.data.success) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('type', res.data.userType);
+                
                 alert(res.data.message);
                 navigate("/home");
             } else {

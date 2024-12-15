@@ -18,6 +18,9 @@ export default function ForgetPassword() {
             const res = await axios.post("http://localhost:4000/forgetPassword", { username, password, newPassword });
 
             if (res.data.success) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('type', res.data.userType);
+                
                 alert(res.data.message);
                 navigate("/home");
             } else {
