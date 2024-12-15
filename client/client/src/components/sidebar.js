@@ -25,12 +25,12 @@ export default function Sidebar() {
       </div>
 
       <NavLink to="/add-post" className={"logout-button"}>
-        <span className="icon">✙</span>Add Post
+        <span className="icon">✙</span>Post
       </NavLink>
 
       { localStorage.getItem('type') === "admin" && (
         <NavLink to="/add-announcement" className={"logout-button"}>
-          <span className="icon">✙</span>Add Announcement
+          <span className="icon">✙</span>Announcement
         </NavLink>
       )}
 
@@ -38,8 +38,7 @@ export default function Sidebar() {
         <h3>Welcome to the Portal!</h3>
         <p>
           Explore the resources, stay connected, and make the most of our
-          platform to achieve your goals. We're here to support you—dive in and
-          make the most of it!
+          platform. Dive in now!
         </p>
       </div>
       {/* Logout Button */}
