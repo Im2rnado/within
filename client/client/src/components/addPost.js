@@ -41,25 +41,48 @@ export default function AddPost() {
     return (
         <Container>
             <div className="post-container">
-                <Form className="post-form" onSubmit={createPost}>
-                    <Form.Group controlId="formBasicTitle">
-                        <Form.Label>Post Title</Form.Label>
+                <Form className="post-form">
+                    <Form.Group controlId="formFirstName">
+                        <Form.Label>First Name</Form.Label>
                         <Form.Control
                             type="text"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
+                            placeholder="Enter your first name"
                             required
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicContent">
-                        <Form.Label>Post Content</Form.Label>
+                    <Form.Group controlId="formLastName">
+                        <Form.Label>Last Name</Form.Label>
                         <Form.Control
-                            as="textarea"
-                            className="content-textarea"
-                            rows={5}
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
+                            type="text"
+                            placeholder="Enter your last name"
+                            required
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="formEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="formPhone">
+                        <Form.Label>Phone Number</Form.Label>
+                        <Form.Control
+                            type="tel"
+                            placeholder="Enter your phone number"
+                            required
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="formPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Enter a new password"
                             required
                         />
                     </Form.Group>
@@ -71,7 +94,7 @@ export default function AddPost() {
                     )}
 
                     <Button className="post-button" type="submit">
-                        Post
+                        Save Changes
                     </Button>
                 </Form>
             </div>
