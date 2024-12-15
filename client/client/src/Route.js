@@ -7,6 +7,7 @@ import Posts from './Posts.js';
 import Announcements from './Announcements.js';
 import AddPost from './AddPost.js';
 import AddAnnouncement from './AddAnnouncement.js';
+import Profile from './components/profile.js';
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         <Route path="announcements" element={<Announcements />} />
         <Route path="add-post" element={<AddPost />} />
         <Route path="add-announcement" element={<AddAnnouncement />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
