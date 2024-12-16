@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "../css/Header.css";
 import { useTheme } from '../ThemeContext';
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const { lightMode, setLightMode } = useTheme();
-  const [messages, setMessages] = useState(5);
 
   const handleSearch = (event) => {
     event.preventDefault();

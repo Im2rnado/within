@@ -51,7 +51,7 @@ export default function Profile() {
             setType(response.data.user.type);
             setDepartment(response.data.user.department);
         });
-    }, []);
+    }, [username]);
 
     return (
         <Container>
