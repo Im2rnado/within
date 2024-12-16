@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import "../css/Header.css";
+import { useTheme } from '../ThemeContext';
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
+  const { lightMode, setLightMode } = useTheme();
   const [messages, setMessages] = useState(5);
 
   const handleSearch = (event) => {
     event.preventDefault();
     const searchQuery = event.target.search.value;
     console.log("Search Query:", searchQuery);
+  };
+
+  const toggleTheme = () => {
+    setLightMode(!lightMode);
   };
 
   return (
@@ -32,36 +39,34 @@ export default function Header() {
           className="header__search-input"
           style={{ color: 'white' }}
         />
-
       </form>
 
-      
       <nav className="header__nav">
-        <a
-          href="#"
-          title="Notifications"
-          className="notification-icon"
-          style={{ color: 'white' }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
-            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" />
-          </svg>
-          {messages > 0 && <div className="notification-badge">{messages}</div>}
-        </a>
+        <button onClick={toggleTheme} className="theme-toggle">
+          {lightMode ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          )}
+        </button>
 
-        <a href="#" title="Settings" style={{ color: 'white' }}>
-          <i className="fas fa-cog"></i>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 2</svg></svg>4" width="24" height="24" fill="white">
-            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L3.5 8.89c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.03-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
-          </svg>
-        </a>
-
-        <a href="#" title="User Page" style={{ color: 'white' }}>
+        <NavLink to="/profile" style={{ color: 'white' }}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
           </svg>
-        </a>
-
+        </NavLink>
       </nav>
     </header>
   );

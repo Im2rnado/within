@@ -2,10 +2,11 @@ import Header from "./components/header";
 import Sidebar from "./components/sidebar";
 import "./css/App.css";
 import Announcements from "./components/announcements";
+import { ThemeProvider } from './ThemeContext';
 
 function App() {
     return (
-        <div className="main-container">
+        <ThemeProvider className="main-container">
             <Sidebar />
             <div className="middle-container">
                 <div>
@@ -18,7 +19,7 @@ function App() {
                     </div>
                 </div>
             </div>
-        </div>
+        </ThemeProvider>
     );
 }
 export default App;

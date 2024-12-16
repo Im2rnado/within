@@ -103,24 +103,20 @@
   color: white;
 }
 
-/* Notification bell specific styles */
-.notification-icon {
-  position: relative;
-}
-
-/* Red circle at the bottom right of the bell icon */
-.notification-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: red;
+.theme-toggle {
   color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.theme-toggle:hover {
+  opacity: 0.;
 }

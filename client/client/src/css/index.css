@@ -2,10 +2,26 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color-light: #BFD7FF;
+  --text-color-light: #000000;
+  --bg-color-dark: #333333;
+  --text-color-dark: #ffffff;
+}
+
+.light-mode {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background-color: #333333 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +29,7 @@ body {
 }
 
 .login-container {
-  background-color: #333333;
+  background-color: var(--bg-color-dark);
   border: 1px #3044FB solid;
   padding-right: 16px;
   padding-left: 16px;
@@ -47,7 +63,7 @@ body {
 }
 
 .login-form .form-control {
-  background-color: #333333;
+  background-color: var(--bg-color-dark);
   border: 2px solid #3044FB;
   padding-left: 16px;
   border-radius: 16px;
@@ -136,7 +152,7 @@ body {
 
 /* Register */
 .signup-container {
-  background-color: #333333;
+  background-color: var(--bg-color-dark);
   border: 1px #3044FB solid;
   padding-right: 16px;
   padding-left: 16px;
@@ -157,7 +173,7 @@ body {
 }
 
 .signup-form .form-control {
-  background-color: #333333;
+  background-color: var(--bg-color-dark);
   border: 2px solid #3044FB;
   padding-left: 16px;
   border-radius: 16px;
@@ -308,7 +324,7 @@ body {
 }
 
 .post-container {
-  background-color: #333333;
+  background-color: #2e2e2e;
   border: 1px #3044FB solid;
   padding-right: 16px;
   padding-left: 16px;
@@ -332,7 +348,7 @@ body {
 }
 
 .post-form .form-control {
-  background-color: #333333;
+  background-color: #2e2e2e;
   border: 2px solid #3044FB;
   padding-left: 16px;
   border-radius: 16px;

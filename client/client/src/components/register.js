@@ -51,83 +51,85 @@ export default function Register() {
     };
 
     return (
-        <div className="background-image">
-            <Container>
-                <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
+        <body style={{ backgroundColor: "#3044FB", width: "100vw" }}>
+            <div className="background-image">
+                <Container>
+                    <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
 
-                <div className="signup-container">
-                    <div className="title">
-                        <h2 className="login-container-h2">Register</h2>
+                    <div className="signup-container">
+                        <div className="title">
+                            <h2 className="login-container-h2">Register</h2>
+                        </div>
+
+                        <Form className="signup-form" onSubmit={register}>
+                            {/* username */}
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
+                            {/* email */}
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
+                            {/* password */}
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
+                            {/* type */}
+                            <Form.Group controlId="formBasicType">
+                                <Form.Label>Type</Form.Label>
+                                <Form.Control
+                                    as="select"
+                                    onChange={(e) => setType(e.target.value)}
+                                >
+                                    <option value="student">Student</option>
+                                    <option value="admin">Admin</option>
+                                </Form.Control>
+                            </Form.Group>
+
+                            {/* Error Message */}
+                            {errorMessage && (
+                                <div className="error-message">
+                                    <p>{errorMessage}</p>
+                                </div>
+                            )}
+
+                            {/* signup button */}
+                            <Button className="signup-button-signup" type="submit">
+                                Register
+                            </Button>
+
+                            {/* Login */}
+                            {
+                                <div className="forgot-pass">
+                                    <p>Already have an account? <NavLink to="/login" className={"reset-click"}>Login</NavLink></p>
+                                </div>
+                            }
+
+                        </Form>
                     </div>
-
-                    <Form className="signup-form" onSubmit={register}>
-                        {/* username */}
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-
-                        {/* email */}
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-
-                        {/* password */}
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-
-                        {/* type */}
-                        <Form.Group controlId="formBasicType">
-                            <Form.Label>Type</Form.Label>
-                            <Form.Control
-                                as="select"
-                                onChange={(e) => setType(e.target.value)}
-                            >
-                                <option value="student">Student</option>
-                                <option value="admin">Admin</option>
-                            </Form.Control>
-                        </Form.Group>
-
-                        {/* Error Message */}
-                        {errorMessage && (
-                            <div className="error-message">
-                                <p>{errorMessage}</p>
-                            </div>
-                        )}
-
-                        {/* signup button */}
-                        <Button className="signup-button-signup" type="submit">
-                            Register
-                        </Button>
-
-                        {/* Login */}
-                        {
-                            <div className="forgot-pass">
-                                <p>Already have an account? <NavLink to="/login" className={"reset-click"}>Login</NavLink></p>
-                            </div>
-                        }
-
-                    </Form>
-                </div>
-            </Container>
-        </div>
+                </Container>
+            </div>
+        </body>
     )
 }

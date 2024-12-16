@@ -32,74 +32,76 @@ export default function ForgetPassword() {
     };
 
     return (
-        <div className="background-image">
-            <Container>
-                <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
+        <body style={{ backgroundColor: "#3044FB", width: "100vw" }}>
+            <div className="background-image">
+                <Container>
+                    <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
 
-                <div className="login-container" >
-                    <div className="title">
-                        <h2 className="login-container-h2">Reset Password</h2>
-                    </div>
-                    
-                    <Form className="login-form" onSubmit={forgetPassword}>
-
-                        {/* Username Field */}
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-
-                        {/* Password Field */}
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Old Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-
-                        {/* New Password Field */}
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>New Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value={newPassword}
-                                onChange={(e) => setNewPassword(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-
-                        {/* Error Message */}
-                        {errorMessage && (
-                            <div className="error-message">
-                                <p>{errorMessage}</p>
-                            </div>
-                        )}
-
-                        <div className="login-button-container">
-                            {/* ForgetPassword Button */}
-                            <Button className="login-button" id="reset-password-button" type="submit">
-                                Reset Password
-                            </Button>
+                    <div className="login-container" >
+                        <div className="title">
+                            <h2 className="login-container-h2">Reset Password</h2>
                         </div>
 
-                        {/* Login */}
-                        {
-                            <div className="forgot-pass">
-                                <p>Return back to <NavLink to="/login" className={"reset-click"}>Login</NavLink></p>
-                            </div>
-                        }
-                    </Form>
-                </div>
+                        <Form className="login-form" onSubmit={forgetPassword}>
 
-            </Container>
-        </div>
+                            {/* Username Field */}
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
+                            {/* Password Field */}
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Old Password</Form.Label>
+                                <Form.Control
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
+                            {/* New Password Field */}
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>New Password</Form.Label>
+                                <Form.Control
+                                    type="password"
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
+                            {/* Error Message */}
+                            {errorMessage && (
+                                <div className="error-message">
+                                    <p>{errorMessage}</p>
+                                </div>
+                            )}
+
+                            <div className="login-button-container">
+                                {/* ForgetPassword Button */}
+                                <Button className="login-button" id="reset-password-button" type="submit">
+                                    Reset Password
+                                </Button>
+                            </div>
+
+                            {/* Login */}
+                            {
+                                <div className="forgot-pass">
+                                    <p>Return back to <NavLink to="/login" className={"reset-click"}>Login</NavLink></p>
+                                </div>
+                            }
+                        </Form>
+                    </div>
+
+                </Container>
+            </div>
+        </body>
     );
 }
