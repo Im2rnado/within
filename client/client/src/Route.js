@@ -7,7 +7,7 @@ import Posts from './Posts.js';
 import Announcements from './Announcements.js';
 import AddPost from './AddPost.js';
 import AddAnnouncement from './AddAnnouncement.js';
-import Profile from './components/profile.js';
+import Profile from './Profile.js';
 
 function Router() {
   return (

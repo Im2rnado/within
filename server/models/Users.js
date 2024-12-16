@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     type: { type: String, enum: ["student", "admin"], default: "student" },
+    department: { type: String, enum: ["computing", "business", "cinematics", "media", "sports"] },
     profilePicture: { type: String } /*url to image*/
 });
 

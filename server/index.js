@@ -123,7 +123,7 @@ router.post("/forgetPassword", async (req, res) => {
     }
 });
 
-router.get("/posts", async(req, res) => {
+router.get("/posts", async (req, res) => {
     console.log("[GET] /posts");
 
     try {
@@ -149,7 +149,7 @@ router.get("/homePosts", async (req, res) => {
     }
 });
 
-router.post("/addPost", async(req, res) => {
+router.post("/addPost", async (req, res) => {
     console.log("[POST] /addPost");
 
     const { author, title, content } = req.body;
@@ -191,7 +191,7 @@ router.delete("/deletePost/:title", async (req, res) => {
     }
 });
 
-router.get("/announcements", async(req, res) => {
+router.get("/announcements", async (req, res) => {
     console.log("[GET] /announcements");
 
     try {
@@ -204,7 +204,7 @@ router.get("/announcements", async(req, res) => {
     }
 });
 
-router.post("/addAnnouncement", async(req, res) => {
+router.post("/addAnnouncement", async (req, res) => {
     console.log("[POST] /addAnnouncement");
 
     const { author, title, content } = req.body;
@@ -228,7 +228,7 @@ router.post("/addAnnouncement", async(req, res) => {
     }
 });
 
-router.delete("/deleteAnnouncement/:title", async(req, res) => {
+router.delete("/deleteAnnouncement/:title", async (req, res) => {
     const title = req.params.title;
 
     console.log("[DELETE] /deleteAnnouncement/" + title);
@@ -253,23 +253,44 @@ router.delete("/deleteAnnouncement/:title", async(req, res) => {
     }
 });
 
-router.post("/editUser", async(req, res) => {
-    console.log("[POST] /editUser");
+router.get("/profile/:username", async (req, res) => {
+    const username = req.params.username;
 
-    const { id, username, email, profilePicture } = req.body;
+    console.log("[GET] /profile/" + username);
 
     try {
-        const user = await Users.findById(id);
+        const user = await Users.findOne({ username });
 
         if (!user) {
             console.log("[400] User not found");
             return res.status(400).json({ success: false, message: "User not found" });
         }
 
-        user.username = username;
+        console.log("[200] User retrieved successfully");
+        return res.status(200).json({ success: true, user });
+    } catch (error) {
+        console.log("[500] Internal server error");
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+router.post("/profile", async (req, res) => {
+    console.log("[POST] /profile");
+
+    const { oldUsername, newUsername, email, profilePicture, department } = req.body;
+
+    try {
+        const user = await Users.findOne({ username: oldUsername });
+
+        if (!user) {
+            console.log("[400] User not found");
+            return res.status(400).json({ success: false, message: "User not found" });
+        }
+
+        user.username = newUsername;
         user.email = email;
-        user.type = type;
         user.profilePicture = profilePicture;
+        user.department = department;
 
         await user.save();
 
@@ -281,12 +302,12 @@ router.post("/editUser", async(req, res) => {
     }
 });
 
-router.get("/offers", async(req, res) => {
+router.get("/offers", async (req, res) => {
     console.log("[GET] /offers");
 
     try {
         const offers = await Offers.find();
-        
+
         console.log("[200] Offers retrieved successfully");
         return res.status(200).json({ success: true, offers });
     } catch (error) {

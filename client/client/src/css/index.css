@@ -348,6 +348,11 @@ body {
   background-color: #2433DE;
 }
 
+.form-control:disabled {
+  background-color: #202EB3 !important;
+  border: none;
+}
+
 .post-form .content-textarea {
   min-height: 50vh;
 }
