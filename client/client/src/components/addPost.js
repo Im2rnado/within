@@ -7,6 +7,7 @@ export default function AddPost() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const badwords = ["fuck", "shit", "bitch", "slut", "motherfucker", "ass", "cunt", "nigga", "pussy", "porn", "kosomak", "khawal", "metnak", "3ars"];
     const navigate = useNavigate();
 
     const createPost = async (event) => {
@@ -15,6 +16,11 @@ export default function AddPost() {
 
         if (!title || !content) {
             setErrorMessage("All fields are required.");
+            return;
+        }
+
+        if (badwords.find(word => (content.split(' ').find(s => s.toLowerCase() == word) || title.split(' ').find(s => s.toLowerCase() == word)))) {
+            setErrorMessage("This post has been hidden because it may go against our guidelines.");
             return;
         }
 
