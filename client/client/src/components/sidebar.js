@@ -5,7 +5,7 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <NavLink to="/home">
-        <img className="logo" src="/Eslsca-Logo.png" />
+        <img className="logo" src="/Eslsca-Logo.png" alt="ESLSCA Logo"/>
       </NavLink>
       {/* Pages' Buttons */}
       <div className="menu">

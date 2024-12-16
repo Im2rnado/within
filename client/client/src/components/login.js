@@ -32,13 +32,15 @@ export default function Login() {
     };
 
     return (
-        <div>
+        <div className="background-image">
             <Container>
-                <div className="title">
-                    <h2 className="login-container-h2">Login</h2>
-                </div>
+                <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
 
                 <div className="login-container">
+                    <div className="title">
+                        <h2 className="login-container-h2">Login</h2>
+                    </div>
+
                     <Form className="login-form" onSubmit={login}>
 
                         {/* Username Field */}
@@ -76,13 +78,13 @@ export default function Login() {
                                 Login
                             </Button>
 
-                            {/* Signup Button */}
+                            {/* Register Button */}
                             <NavLink to="/register">
                                 <Button
                                     className="signup-button"
                                     type="button"
                                 >
-                                    Signup
+                                    Register
                                 </Button>
                             </NavLink>
                         </div>

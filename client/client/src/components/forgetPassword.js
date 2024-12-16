@@ -32,13 +32,15 @@ export default function ForgetPassword() {
     };
 
     return (
-        <div>
+        <div className="background-image">
             <Container>
-                <div className="title">
-                    <h2 className="login-container-h2">Reset Password</h2>
-                </div>
+                <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
 
                 <div className="login-container" >
+                    <div className="title">
+                        <h2 className="login-container-h2">Reset Password</h2>
+                    </div>
+                    
                     <Form className="login-form" onSubmit={forgetPassword}>
 
                         {/* Username Field */}

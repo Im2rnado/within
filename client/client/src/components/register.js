@@ -51,13 +51,15 @@ export default function Register() {
     };
 
     return (
-        <div>
+        <div className="background-image">
             <Container>
-                <div className="title">
-                    <h2 className="login-container-h2">Register</h2>
-                </div>
+                <img className="logo-login" src="/Eslsca-Logo.png" alt='ESLSCA Logo' />
 
                 <div className="signup-container">
+                    <div className="title">
+                        <h2 className="login-container-h2">Register</h2>
+                    </div>
+
                     <Form className="signup-form" onSubmit={register}>
                         {/* username */}
                         <Form.Group controlId="formBasicUsername">
@@ -113,7 +115,7 @@ export default function Register() {
 
                         {/* signup button */}
                         <Button className="signup-button-signup" type="submit">
-                            Signup
+                            Register
                         </Button>
 
                         {/* Login */}
