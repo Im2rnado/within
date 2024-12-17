@@ -36,7 +36,7 @@ export default function Register() {
 
             if (res.data.success) {
                 localStorage.setItem('username', username);
-                localStorage.setItem('type', res.data.type);
+                localStorage.setItem('type', type);
 
                 alert(res.data.message);
                 navigate("/home");

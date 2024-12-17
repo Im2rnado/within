@@ -25,7 +25,7 @@ export default function Announcements() {
                 }
             })
             .catch((err) => {
-                alert(`Error: ${err.message}`);
+                alert(`Error: ${err.response?.data?.message || "An error occurred"}`);
             });
     };
 

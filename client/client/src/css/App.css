@@ -64,3 +64,13 @@ h1 {
     /* Adjust the opacity as needed */
     z-index: -1;
 }
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right;
+    margin-top: -6vh;
+    margin-right: 1vw;
+    color: #ef4444;
+}

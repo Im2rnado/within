@@ -25,9 +25,28 @@ export default function Posts() {
                 }
             })
             .catch((err) => {
-                alert(`Error: ${err.message}`);
+                alert(`Error: ${err.response?.data?.message || "An error occurred"}`);
             });
     };
+
+    const handleLikePost = (title) => {
+        axios
+            .post(`http://localhost:4000/likePost/${title}`, { username: localStorage.getItem('username') })
+            .then((response) => {
+                if (response.data.success) {
+                    setPosts(
+                        posts.map((post) =>
+                            post.title === title ? { ...post, likes: response.data.likes } : post
+                        )
+                    );
+                } else {
+                    alert("Failed to like post");
+                }
+            })
+            .catch((err) => {
+                alert(`Error: ${err.response?.data?.message || "An error occurred"}`);
+            });
+    }
 
     return (
         <>
@@ -52,6 +71,9 @@ export default function Posts() {
                         Posted by <b>{post?.author}</b> on{" "}
                         <b>{new Date(post?.date).toLocaleDateString()}</b> at{" "}
                         <b>{new Date(post?.date).toLocaleTimeString()}</b>
+                    </p>
+                    <p className="likes" onClick={() => handleLikePost(post.title)}>
+                        ❤️{post?.likes?.length}
                     </p>
                 </div>
             ))}

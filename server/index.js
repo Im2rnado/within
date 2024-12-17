@@ -78,7 +78,7 @@ router.post("/register", async (req, res) => {
         await newUser.save();
 
         console.log("[200] User created successfully");
-        return res.status(200).json({ success: true, message: "User created successfully", type: user.type });
+        return res.status(200).json({ success: true, message: "User created successfully", type });
     } catch (error) {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });
@@ -185,6 +185,38 @@ router.delete("/deletePost/:title", async (req, res) => {
 
         console.log("[200] Post deleted successfully");
         return res.status(200).json({ success: true, message: "Post deleted successfully" });
+    } catch (error) {
+        console.log("[500] Internal server error");
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+router.post("/likePost/:title", async (req, res) => {
+    const title = req.params.title;
+    const username = req.body.username;
+
+    console.log("[POST] /likePost/" + title);
+
+    try {
+        const post = await Posts.findOne({
+            title
+        });
+
+        if (!post) {
+            console.log("[400] Post not found");
+            return res.status(400).json({ success: false, message: "Post not found" });
+        }
+
+        if (post.likes.includes(username)) {
+            console.log("[400] You already liked this post");
+            return res.status(400).json({ success: false, message: "You already liked this post" });
+        }
+
+        post.likes.push(username);
+        await post.save();
+
+        console.log("[200] Post liked successfully");
+        return res.status(200).json({ success: true, message: "Post liked successfully", likes: post.likes });
     } catch (error) {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });
