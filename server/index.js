@@ -7,9 +7,10 @@ const Users = require("./models/Users");
 const Posts = require("./models/Posts");
 const Announcements = require("./models/Announcements");
 const Offers = require("./models/Offers")
+const env = require("dotenv").config().parsed;
 
 // connect to mongodb
-mongoose.connect("mongodb+srv://ESLSCA12345:ESLSCA12345@within.2x0cr.mongodb.net/Within?retryWrites=true&w=majority&appName=Within")
+mongoose.connect(env.MONGODB_URI)
     .then(() => console.log("[MONGODB] Connected successfully"))
     .catch(err => console.error(err));
 
@@ -142,7 +143,8 @@ router.get("/homePosts", async (req, res) => {
     try {
         const posts = await Posts.find();
         console.log("[200] Posts retrieved successfully");
-        return res.status(200).json({ success: true, trending: posts[0], latest: posts[posts.length - 1] });
+        return res.status(200).json({ success: true, trending: posts.sort((a, b) => b.likes.length - a.likes.length)[0]
+            , latest: posts[posts.length - 1] });
     } catch (error) {
         console.log("[500] Internal server error");
         res.status(500).json({ success: false, message: error.message });
@@ -208,8 +210,9 @@ router.post("/likePost/:title", async (req, res) => {
         }
 
         if (post.likes.includes(username)) {
-            console.log("[400] You already liked this post");
-            return res.status(400).json({ success: false, message: "You already liked this post" });
+            post.likes.pop(username);
+            await post.save();
+            return res.status(200).json({ success: true, message: "Post unliked successfully", likes: post.likes });
         }
 
         post.likes.push(username);

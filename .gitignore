@@ -14,6 +14,9 @@ build/
 # Ignore OS generated files
 .DS_Store
 Thumbs.db
+*.pptx
+*.docx
+*.pdf
 
 # Ignore IDE specific files
 .vscode/

@@ -35,7 +35,7 @@ export default function Sidebar() {
       )}
 
       <div className="welcome-box">
-        <h3>Welcome to the Portal!</h3>
+        <h3>Welcome to ESLSCA Connect</h3>
         <p>
           Explore the resources, stay connected, and make the most of our
           platform. Dive in now!
